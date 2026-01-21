@@ -1,3 +1,4 @@
+import { createSalesBillingTables } from "../billing/table";
 import { createItemTable } from "../item/table";
 import { createUnitTable } from "../unit/table";
 // import { createUnitTable } from "../unit/table";
@@ -11,6 +12,8 @@ async function migrate() {
     // Run all migrations in sequence
     await createItemTable();
     await createUnitTable();
+    await createSalesBillingTables();
+
 
     // await createUnitTable();
     // await createCategoryTable();

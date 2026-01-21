@@ -21,7 +21,7 @@ export const ItemController = {
 
 
     async create(req: Request, res: Response) {
-
+        console.log("local host item", req.body)
         const err = validateItemPayload(req.body);
         if (err) return res.status(400).json({ error: err });
     

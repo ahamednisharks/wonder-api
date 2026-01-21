@@ -25,3 +25,39 @@ export async function testConnection() {
     throw err;
   }
 }
+
+
+
+
+
+
+
+
+
+// src/config/db.ts
+// import dotenv from "dotenv";
+// import { Pool } from "pg";
+
+// dotenv.config();
+
+// export const db = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false, // REQUIRED for Neon
+//   },
+// });
+
+// db.on("error", (err: any) => {
+//   console.error("❌ Unexpected DB error", err);
+// });
+
+// export async function testConnection() {
+//   try {
+//     await db.query("SELECT 1");
+//     console.log("✅ Neon Postgres connected");
+//   } catch (err) {
+//     console.error("❌ Neon Postgres connect error", err);
+//     throw err;
+//   }
+// }
+

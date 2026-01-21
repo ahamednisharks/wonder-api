@@ -8,7 +8,8 @@ export const BillingController = {
     // CREATE / SAVE BILL
     // -----------------------
     async create(req: Request, res: Response) {
-        const error = BillingValidationSchema('create',req.body);
+        console.log("Save Bill = ", req.body)
+        const error = BillingValidationSchema('create', req.body);
         if (error) return res.status(400).json({ error });
 
         try {
@@ -25,7 +26,7 @@ export const BillingController = {
     // -----------------------
     async getAll(req: Request, res: Response) {
         try {
-            const bills = await BillingModel.getAll();
+            const bills = await BillingModel.getAll(req.body);
             return res.json(bills);
         } catch (err) {
             console.error("Get Bills Error:", err);
